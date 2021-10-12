@@ -1,13 +1,13 @@
-import Image from 'next/image';
 import {
-	SearchIcon,
-	PlusCircleIcon,
-	UserGroupIcon,
 	HeartIcon,
-	PaperAirplaneIcon,
 	MenuIcon,
+	PaperAirplaneIcon,
+	PlusCircleIcon,
+	SearchIcon,
+	UserGroupIcon,
 } from '@heroicons/react/outline';
 import { HomeIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 
 export default function Header() {
 	return (
