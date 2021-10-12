@@ -16,13 +16,8 @@ export default function Stories() {
 
 	return (
 		<div className="flex space-x-2 p-6 bg-white mt-8 border border-gray-200 rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
-			{suggestions.map((profile) => (
-				<Story
-					key={profile.id}
-					avatar={profile.avatar}
-					username={profile.username}
-					name={profile.name}
-				/>
+			{suggestions.map(({ id, avatar, username, name }) => (
+				<Story key={id} avatar={avatar} username={username} name={name} />
 			))}
 		</div>
 	);
