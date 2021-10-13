@@ -8,13 +8,13 @@ const DUMMY_DATA = [
 		image: 'https://github.com/diego3g.png',
 		caption: 'Subscribe and destroy the like button',
 	},
-	{
-		id: '321',
-		username: 'Diego Fernandes',
-		userImage: 'https://github.com/diego3g.png',
-		image: 'https://github.com/diego3g.png',
-		caption: 'Subscribe and destroy the like button',
-	},
+	// {
+	// 	id: '321',
+	// 	username: 'Diego Fernandes',
+	// 	userImage: 'https://github.com/diego3g.png',
+	// 	image: 'https://github.com/diego3g.png',
+	// 	caption: 'Subscribe and destroy the like button',
+	// },
 ];
 
 export default function Posts() {

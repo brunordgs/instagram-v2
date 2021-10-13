@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Header from '../components/Header';
+import Header from '../components/ui/Header';
 import Feed from '../components/Feed';
+import Modal from '../components/ui/Modal';
 
 export default function Home() {
 	return (
@@ -10,8 +11,9 @@ export default function Home() {
 				<link rel="icon" type="image/png" href="/instagram-icon.png" />
 			</Head>
 
+			<Modal />
 			<Header />
-      <Feed />
+			<Feed />
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { getProviders, signIn } from 'next-auth/react';
-import Header from '../../components/Header';
+import Header from '../../components/ui/Header';
 
 export default function Signin({ providers }) {
 	return (
