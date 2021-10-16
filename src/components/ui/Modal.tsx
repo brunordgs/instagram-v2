@@ -46,7 +46,7 @@ export default function Modal() {
 		setSelectedFile(null);
 	}
 
-	function addImagePost(e: Event) {
+	function addImagePost(e: FormEvent) {
 		const reader = new FileReader();
 		const file = (e.target as HTMLInputElement).files[0];
 
