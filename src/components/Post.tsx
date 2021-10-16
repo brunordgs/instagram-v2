@@ -8,7 +8,7 @@ import {
 	query,
 	serverTimestamp,
 	setDoc,
-} from '.pnpm/@firebase+firestore@3.1.0_@firebase+app@0.7.3/node_modules/@firebase/firestore';
+} from 'firebase/firestore';
 import {
 	BookmarkIcon,
 	ChatIcon,
@@ -114,11 +114,14 @@ export default function Post({ id, username, userImage, image, caption }: Props)
 
 			{/* Caption */}
 			<p className="p-5 truncante">
+				{!!likes.length && (
+					<p className="font-bold mb-1">{likes.length} {likes.length > 1 ? 'likes' : 'like'}</p>
+				)}
 				<span className="font-bold mr-1">{username}</span> {caption}
 			</p>
 
 			{/* Comments */}
-			{comments.length && (
+			{!!comments.length && (
 				<div className="ml-10 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin">
 					{comments.map((comment) => (
 						<div key={comment.id} className="flex items-center space-x-2 mb-3">
