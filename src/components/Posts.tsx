@@ -1,33 +1,27 @@
+import { onSnapshot, query, collection, orderBy } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { db } from '../../firebase';
 import Post from './Post';
 
-const DUMMY_DATA = [
-	{
-		id: '123',
-		username: 'Diego Fernandes',
-		userImage: 'https://github.com/diego3g.png',
-		image: 'https://github.com/diego3g.png',
-		caption: 'Subscribe and destroy the like button',
-	},
-	// {
-	// 	id: '321',
-	// 	username: 'Diego Fernandes',
-	// 	userImage: 'https://github.com/diego3g.png',
-	// 	image: 'https://github.com/diego3g.png',
-	// 	caption: 'Subscribe and destroy the like button',
-	// },
-];
-
 export default function Posts() {
+	const [posts, setPosts] = useState([]);
+
+	useEffect(() => {
+		return onSnapshot(query(collection(db, 'posts'), orderBy('timestamp', 'desc')), (snapshot) => {
+			setPosts(snapshot.docs);
+		});
+	}, [db]);
+
 	return (
 		<div>
-			{DUMMY_DATA.map(({ id, username, userImage, image, caption }) => (
+			{posts.map((post) => (
 				<Post
-					key={id}
-					id={id}
-					username={username}
-					userImage={userImage}
-					image={image}
-					caption={caption}
+					key={post.id}
+					id={post.id}
+					username={post.data().username}
+					userImage={post.data().profileImg}
+					image={post.data().image}
+					caption={post.data().caption}
 				/>
 			))}
 		</div>
