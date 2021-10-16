@@ -115,7 +115,9 @@ export default function Post({ id, username, userImage, image, caption }: Props)
 			{/* Caption */}
 			<p className="p-5 truncante">
 				{!!likes.length && (
-					<p className="font-bold mb-1">{likes.length} {likes.length > 1 ? 'likes' : 'like'}</p>
+					<p className="font-bold mb-1">
+						{likes.length} {likes.length > 1 ? 'likes' : 'like'}
+					</p>
 				)}
 				<span className="font-bold mr-1">{username}</span> {caption}
 			</p>
